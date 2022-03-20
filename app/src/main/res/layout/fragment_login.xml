@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.kailin.coroutines_arch.ui.login.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/fragment_horizontal_margin"
+        android:paddingVertical="@dimen/fragment_vertical_margin">
+
+        <com.kailin.coroutines_arch.widget.EditTextInputLayout
+            android:id="@+id/usernameInputLayout"
+            style="@style/Theme.CoroutinesArch.CustomView.EditTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="@{!viewModel.isLoading()}"
+            android:hint="@string/login_username"
+            app:layout_constraintBottom_toTopOf="@id/passwordInputLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed">
+
+            <com.kailin.coroutines_arch.widget.EditText
+                android:id="@+id/usernameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textVisiblePassword"
+                android:text="@={viewModel.username}" />
+
+        </com.kailin.coroutines_arch.widget.EditTextInputLayout>
+
+        <com.kailin.coroutines_arch.widget.EditTextInputLayout
+            android:id="@+id/passwordInputLayout"
+            style="@style/Theme.CoroutinesArch.CustomView.EditTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fragment_vertical_margin"
+            android:enabled="@{!viewModel.isLoading()}"
+            android:hint="@string/login_password"
+            app:layout_constraintBottom_toTopOf="@id/loginButton"
+            app:layout_constraintTop_toBottomOf="@id/usernameInputLayout">
+
+            <com.kailin.coroutines_arch.widget.EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword"
+                android:text="@={viewModel.password}" />
+
+        </com.kailin.coroutines_arch.widget.EditTextInputLayout>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/passwordVisibility"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/passwordInputLayout"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/passwordInputLayout"
+            android:scaleType="centerInside"
+            android:onClick="@{()->viewModel.switchPasswordDisplayed()}"
+            android:src="@drawable/ic_baseline_visibility_on_24"/>
+
+        <com.kailin.coroutines_arch.widget.Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button_selector"
+            android:enabled="@{!viewModel.isLoading()}"
+            android:onClick="@{()->viewModel.login()}"
+            android:text="@string/login_login"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.75" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="@{viewModel.isLoading()? View.VISIBLE : View.GONE}"
+            app:layout_constraintLeft_toLeftOf="@id/loginButton"
+            app:layout_constraintRight_toRightOf="@id/loginButton"
+            app:layout_constraintTop_toBottomOf="@id/loginButton" />
+
+        <com.kailin.coroutines_arch.widget.Button
+            android:id="@+id/devLoginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button_selector"
+            android:enabled="@{!viewModel.isLoading()}"
+            android:onClick="@{()->viewModel.devLogin()}"
+            android:text="@string/login_login"
+            android:textAllCaps="false"
+            android:visibility="@{viewModel.isShowDevLogin()? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

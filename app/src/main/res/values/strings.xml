@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">CoroutinesArch</string>
+
+    <string name="login_username">Username</string>
+    <string name="login_username_error_empty">Username cannot be empty</string>
+    <string name="login_username_error_invalid">Please enter the correct format Username</string>
+    <string name="login_password">Password</string>
+    <string name="login_password_error_empty">Password cannot be empty</string>
+    <string name="login_password_error_length">Password must be at least 6 characters</string>
+    <string name="login_login">Login</string>
+
+    <string name="home_empty">No News</string>
+
+    <string name="settings_mail">E-mail : %s</string>
+
+    <string name="dialog_ok">ok</string>
+    <string name="dialog_cancel">cancel</string>
+    <string name="dialog_update">update</string>
+
+    <string name="inputText_blank"/>
+</resources>

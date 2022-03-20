@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.kailin.coroutines_arch.widget.TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="200dp"
+        android:paddingHorizontal="@dimen/view_horizontal_margin"
+        android:paddingVertical="@dimen/view_vertical_margin"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="message" />
+
+    <com.kailin.coroutines_arch.widget.Button
+        android:id="@+id/leftButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/trans"
+        android:text="@string/dialog_ok"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/rightButton"
+        app:layout_constraintTop_toBottomOf="@id/message" />
+
+    <com.kailin.coroutines_arch.widget.Button
+        android:id="@+id/rightButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/trans"
+        android:text="@string/dialog_cancel"
+        app:layout_constraintBottom_toBottomOf="@id/leftButton"
+        app:layout_constraintLeft_toRightOf="@id/leftButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/leftButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

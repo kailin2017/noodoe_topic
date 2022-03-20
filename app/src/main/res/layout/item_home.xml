@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="newsItem"
+            type="com.kailin.coroutines_arch.data.home.TaipeiNewsItem" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/item_horizontal_margin"
+        android:paddingVertical="@dimen/item_vertical_margin">
+
+        <com.kailin.coroutines_arch.widget.TextView
+            android:id="@+id/newsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{newsItem.chtmessage}"
+            android:textSize="@dimen/item_text_title"
+            tools:text="111年度免費掃墓公車服務自3月19日起開始營運" />
+
+        <com.kailin.coroutines_arch.widget.TextView
+            android:id="@+id/newsContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="5"
+            android:paddingVertical="@dimen/item_vertical_margin"
+            android:text="@{newsItem.content}"
+            android:textSize="@dimen/item_text_content"
+            tools:text="為利民眾清明掃墓祭祖，配合墓區道路進行交通管制，由公運處援例闢駛免費掃墓公車，本年度由首都客運、臺北客運及大都會客運於111年3月19、20、26、27日及4月2、3、4、5日共計8天，闢駛木柵線、南港線、軍人公墓線、崇德線及陽明山線等5線掃墓公車，相關營運資訊說明如下:木柵線：捷運動物園站2號出口-萬福橋-富德靈骨樓，全線使用低地板公車方便民眾搭乘。南港線：南港軍人公墓-富德公墓辦公室-富德靈骨樓，全線使用低地板公車；欲搭乘此路線可於捷運昆陽站下車搭乘270、小12、藍25公車或於捷運南港展覽館站下車步行至研究院路1段的南港展覽館站搭乘205、620及645副線等至中華科技大學轉乘掃墓公車南港線。" />
+
+        <com.kailin.coroutines_arch.widget.TextView
+            android:id="@+id/newsTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:gravity="end"
+            android:text="@{newsItem.updatetime}"
+            android:textSize="@dimen/item_text_subTitle"
+            tools:text="2022-03-10 10:45:00" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

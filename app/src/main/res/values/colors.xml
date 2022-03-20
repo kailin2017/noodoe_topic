@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="trans">#00000000</color>
+    <color name="button">@color/colorPrimary</color>
+    <color name="buttonPress">@color/colorPrimaryDark</color>
+
+    <color name="colorPrimary">#ff8100</color>
+    <color name="colorPrimaryDark">#c55200</color>
+    <color name="colorAccent">#ffb243</color>
+    <color name="windowBackground">@color/white</color>
+    <color name="textColorPrimary">@color/black</color>
+</resources>
